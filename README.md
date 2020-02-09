@@ -1,10 +1,3 @@
-[![Build status](https://dev.azure.com/SourceOps/Source/_apis/build/status/Source-WebApi-TemplatePack-CI)](https://dev.azure.com/SourceOps/Source/_build/latest?definitionId=3)
-
-...
-
----
-uid: source-webapi-get-started
----
 
 ## Sample Use Case
 
@@ -24,6 +17,9 @@ Here is a simple CRUD use case illustrated in the default template:
 * C# 8.0
 * Visual Studio Core/Rider/Visual Studio C.E
 * Azure App Services 
+
+
+Ps: Variation of EISK Project. All Tx to him.
 
 
 
