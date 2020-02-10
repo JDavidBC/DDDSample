@@ -6,10 +6,23 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Core\Source.Core\Source.Core.csproj" />
-    <ProjectReference Include="..\..\Domain.DataServices.Interfaces\Domain.DataServices.Interfaces.csproj" />
-    <ProjectReference Include="..\..\Domain.DomainServices\Domain.DomainServices.csproj" />
-    <ProjectReference Include="..\..\DomainCore\Source.Domains\Source.Domains.csproj" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="3.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Domain.DataServices.Interfaces">
+      <HintPath>..\..\Domain.DataServices.Interfaces\bin\Debug\netcoreapp2.2\Domain.DataServices.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Domain.DomainServices">
+      <HintPath>..\..\Domain.DomainServices\bin\Debug\netcoreapp2.2\Domain.DomainServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Source.Core">
+      <HintPath>..\..\Core\Source.Core\bin\Debug\netcoreapp2.2\Source.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Source.Domains">
+      <HintPath>..\..\DomainCore\Source.Domains\bin\Debug\netcoreapp2.2\Source.Domains.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

@@ -12,9 +12,30 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Core\Source.Test.Core\Source.Test.Core.csproj" />
-    <ProjectReference Include="..\..\Domain.DomainServices\Domain.DomainServices.csproj" />
-    <ProjectReference Include="..\Source.EFCore.Setup\Source.EFCore.Setup.csproj" />
+    <Reference Include="Domain.DataServices.Interfaces">
+      <HintPath>..\Source.DataServices.EFCore\bin\Debug\netcoreapp2.2\Domain.DataServices.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Domain.DomainServices">
+      <HintPath>..\..\Domain.DomainServices\bin\Debug\netcoreapp2.2\Domain.DomainServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Source.Core">
+      <HintPath>..\Source.DataServices.EFCore\bin\Debug\netcoreapp2.2\Source.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Source.DataServices.EFCore">
+      <HintPath>..\Source.DataServices.EFCore\bin\Debug\netcoreapp2.2\Source.DataServices.EFCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Source.DataServices.Interfaces">
+      <HintPath>..\..\DomainCore\Source.DomainServices\bin\Debug\netcoreapp2.2\Source.DataServices.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Source.Domains">
+      <HintPath>..\..\DomainCore\Source.Domains\bin\Debug\netcoreapp2.2\Source.Domains.dll</HintPath>
+    </Reference>
+    <Reference Include="Source.EFCore.Setup">
+      <HintPath>..\Source.EFCore.Setup\bin\Debug\netcoreapp2.2\Source.EFCore.Setup.dll</HintPath>
+    </Reference>
+    <Reference Include="Source.Test.Core">
+      <HintPath>..\..\Core\Source.Test.Core\bin\Debug\netcoreapp2.2\Source.Test.Core.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>
