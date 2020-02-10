@@ -15,7 +15,7 @@ namespace Source.Test.Core.DataGen
 
         public override string ToString()
         {
-            return !_generateUniqueValue ? _seedValue : _seedValue + "_" + Guid.NewGuid();
+            return !_generateUniqueValue ? _seedValue : _seedValue + "_";
         }
     }
 }

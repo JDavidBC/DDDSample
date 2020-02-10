@@ -22,7 +22,9 @@ namespace Source.WebApi
         {
             Configuration = configuration;
 
-            DbContextDataInitializer.Initialize(new InMemoryDbContext());
+            //var conex = Configuration.GetConnectionString("DefaultPostgresConnection");
+            
+            DbContextDataInitializer.Initialize(new PostgressDbContext(Configuration));
         }
 
         public IConfiguration Configuration { get; }
@@ -32,7 +34,7 @@ namespace Source.WebApi
         {
             //generic services
 
-            services.AddScoped<DbContext, InMemoryDbContext>();
+            services.AddScoped<DbContext, PostgressDbContext>();
 
             services.AddTransient(typeof(IEntityDataService<>), typeof(EntityDataService<>));
 
@@ -40,7 +42,7 @@ namespace Source.WebApi
 
             //custom services
 
-            services.AddScoped<AppDbContext, InMemoryDbContext>();
+            services.AddScoped<AppDbContext, PostgressDbContext>();
 
             services.AddTransient<IEmployeeDataService, EmployeeDataService>();
 

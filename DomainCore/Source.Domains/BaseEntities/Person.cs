@@ -30,8 +30,6 @@ namespace Source.Domains.BaseEntities
         [Display(Name = "Birth Date")]
         public DateTime? BirthDate { get; set; }
 
-        public Address Address { get; set; }
-
         [Required(ErrorMessage = "Phone required")]
         [StringLength(15)]
         public string Phone { get; set; }
@@ -40,10 +38,8 @@ namespace Source.Domains.BaseEntities
         public string Extension { get; set; }
 
         [DataType(DataType.MultilineText)]
-        [Column(TypeName = "ntext")]
         public string Notes { get; set; }
-
-        [Column(TypeName = "image")]
+        
         public byte[] Photo { get; set; }
 
     }

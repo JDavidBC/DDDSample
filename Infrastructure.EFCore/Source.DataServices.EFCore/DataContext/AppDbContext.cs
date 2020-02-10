@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.CodeAnalysis;
+using Microsoft.EntityFrameworkCore;
 
 namespace Source.DataServices.EFCore.DataContext
 {
@@ -14,7 +15,19 @@ namespace Source.DataServices.EFCore.DataContext
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Employee>().OwnsOne(c => c.Address);
+           // modelBuilder.Entity<Employee>().OwnsOne(c => c.Address);
+           modelBuilder.Entity<Employee>(entity =>
+           {
+               entity.ToTable("Employees");
+
+               entity.HasIndex(e => e.Id)
+                   .HasName("Id")
+                   .IsUnique();
+               
+               //entity.OwnsOne(c => c.Address);
+           });
+
+           
         }
     }
 }

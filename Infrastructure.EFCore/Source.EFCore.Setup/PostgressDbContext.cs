@@ -7,16 +7,16 @@ namespace Source.EFCore.Setup
 {
     public class PostgressDbContext : AppDbContext
     {
-        public PostgressDbContext(IConfiguration configuration) : this(configuration.GetConnectionString("DefaultSqlConnection")) { }
+        //public PostgressDbContext(IConfiguration configuration) : this(configuration.GetConnectionString("DefaultPostgresConnection")) { }
 
         private readonly string _connectionString;
         
-        public PostgressDbContext(string connectionString = null) : base(new DbContextOptionsBuilder<AppDbContext>().Options)
+        public PostgressDbContext(IConfiguration config) : base(new DbContextOptionsBuilder<AppDbContext>().Options)
         {
-            if (string.IsNullOrEmpty(connectionString))
-                throw new ArgumentNullException(nameof(connectionString));
-
-            _connectionString = connectionString;
+            _connectionString = config.GetConnectionString("DefaultPostgresConnection");
+            
+            if (string.IsNullOrEmpty(_connectionString))
+                throw new ArgumentNullException(nameof(_connectionString));
         } 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

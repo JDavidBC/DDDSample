@@ -1,9 +1,13 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
+using Microsoft.EntityFrameworkCore;
 
 namespace Source.Domains.ValueObjects
 {
+    [Owned]
     public class Address
     {
+        
         [StringLength(60)]
         [Required(ErrorMessage = "Address line required.")]
         [Display(Name = "Address line")]
