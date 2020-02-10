@@ -14,7 +14,9 @@ namespace Source.DataServices.EFCore.DataContext
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //modelBuilder.Entity<Caregivers>().OwnsOne(c => c.);
+            modelBuilder.Entity<Caregivers>(entity => { entity.ToTable("Caregivers"); });
+
+
         }
     }
 }

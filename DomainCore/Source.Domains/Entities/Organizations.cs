@@ -6,7 +6,7 @@ using Source.Domains.ValueObjects;
 namespace Source.Domains.Entities
 {
     [Table("Organizations")]
-    public class Organizations
+    public class Organizations : Auditory
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -78,7 +78,7 @@ namespace Source.Domains.Entities
         [Display(Name = "Active")]
         public bool Active { get; set; } = true;
 
-        public Auditory TrackChanges { get; set; }
+        
         
         
     }

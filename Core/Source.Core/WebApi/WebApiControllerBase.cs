@@ -31,6 +31,8 @@ namespace Source.Core.WebApi
         public virtual async Task Post(TDomain domain)
         {
             await DomainService.Add(domain);
+            
+            
         }
 
         [HttpPut("{id}")]

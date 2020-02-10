@@ -3,6 +3,7 @@ using Source.DataServices.EFCore.DataContext;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using SQLitePCL;
 
 namespace Source.EFCore.Setup
 {
@@ -28,17 +29,17 @@ namespace Source.EFCore.Setup
         public void AddDbContext()
         {
             if (_hostingEnvironment.IsDevelopment())
-                _services.AddScoped<AppDbContext, InMemoryDbContext>();
+                _services.AddScoped<AppDbContext, PostgressDbContext>();
             else
-                _services.AddScoped<AppDbContext>(x => new SqlServerDbContext(_configuration));
+                _services.AddScoped<AppDbContext>(x => new PostgressDbContext(_configuration));
         }
 
         public static void AddSeedDataToDbContext(IHostingEnvironment hostingEnvironment, IConfiguration configuration)
         {
             if (hostingEnvironment.IsDevelopment())
-                DbContextDataInitializer.Initialize(new InMemoryDbContext());
+                DbContextDataInitializer.Initialize(new PostgressDbContext(configuration));
             else
-                DbContextDataInitializer.Initialize(new SqlServerDbContext(configuration));
+                DbContextDataInitializer.Initialize(new PostgressDbContext(configuration));
 
         }
     }
