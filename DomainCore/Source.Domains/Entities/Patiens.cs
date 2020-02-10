@@ -1,11 +1,12 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Source.Domains.BaseEntities;
 
 namespace Source.Domains.Entities
 {
     [Table("Patiens")]
-    public class Patiens
+    public class Patiens : Person
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
