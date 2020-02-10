@@ -1,12 +1,12 @@
-﻿namespace Source.WebApi.Controllers
+﻿using Domain.DomainServices;
+namespace Source.WebApi.Controllers
 {
     using Source.Core.WebApi;
     using Domains.Entities;
-    using DomainServices;
-
-    public class EmployeesController : WebApiControllerBase<Employee,int>
+    
+    public class CaregiversController : WebApiControllerBase<Caregivers,long>
     {
-        public EmployeesController(EmployeeDomainService employeeDomainService):base(employeeDomainService)
+        public CaregiversController(CaregiversDomainService caregiversDomainService):base(caregiversDomainService)
         {
             
         }

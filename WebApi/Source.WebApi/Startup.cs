@@ -1,31 +1,34 @@
-﻿using Source.Core.DataService.EFCore;
+﻿using Domain.DataServices.Interfaces;
+using Domain.DomainServices;
+using Source.Core.DataService.EFCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Source.DataServices.EFCore;
 using Swashbuckle.AspNetCore.Swagger;
 
 namespace Source.WebApi
 {
     using Core.DataService;
     using Core.DomainService;
-    using Source.DataServices.EFCore;
     using Source.DataServices.EFCore.DataContext;
-    using DataServices.Interfaces;
-    using DomainServices;
     using EFCore.Setup;
 
     public class Startup
     {
+        private readonly IHostingEnvironment _env;
+
         public Startup(IHostingEnvironment env, IConfiguration configuration)
         {
+            _env = env;
             Configuration = configuration;
 
             DbContextDataInitializer.Initialize(new InMemoryDbContext());
         }
 
-        public IConfiguration Configuration { get; }
+        private IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -42,9 +45,9 @@ namespace Source.WebApi
 
             services.AddScoped<AppDbContext, InMemoryDbContext>();
 
-            services.AddTransient<IEmployeeDataService, EmployeeDataService>();
+            services.AddTransient<ICaregiversDataService, CaregiversDataService>();
 
-            services.AddTransient<EmployeeDomainService>();
+            services.AddTransient<CaregiversDomainService>();
 
             services.AddMvc();
 

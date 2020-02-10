@@ -1,3 +1,4 @@
+using Domain.DomainServices;
 using Source.DataServices.EFCore;
 using Source.Domains.Entities;
 using Source.EFCore.Setup;
@@ -5,19 +6,19 @@ using Source.Test.Core.TestBases;
 
 namespace Source.DomainServices.ComponentTests.EFCore
 {
-    public class EmployeeDomainServiceComponentTests : DomainServiceBaseComponentTests<Employee, int>
+    public class CaregiversDomainServiceComponentTests : DomainServiceBaseComponentTests<Caregivers, long>
     {
-        public EmployeeDomainServiceComponentTests() :
-            base(new EmployeeDomainService(Factory_DataService()), x => x.Id)
+        public CaregiversDomainServiceComponentTests() :
+            base(new CaregiversDomainService(Factory_DataService()), x => x.CaregiverId)
         {
             
         }
 
-        static EmployeeDataService Factory_DataService()
+        static CaregiversDataService Factory_DataService()
         {
-            EmployeeDataService employeeDataService = new EmployeeDataService(TestDbContextFactory.CreateDbContext());
+            var caregiversDataService = new CaregiversDataService(TestDbContextFactory.CreateDbContext());
 
-            return employeeDataService;
+            return caregiversDataService;
         }
     }
 }

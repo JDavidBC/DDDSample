@@ -7,7 +7,7 @@ namespace Source.EFCore.Setup
 {
     public class PostgressDbContext : AppDbContext
     {
-        public PostgressDbContext(IConfiguration configuration) : this(configuration.GetConnectionString("DefaultSqlConnection")) { }
+        public PostgressDbContext(IConfiguration configuration) : this(configuration.GetConnectionString("DefaultPostgressConnection")) { }
 
         private readonly string _connectionString;
         

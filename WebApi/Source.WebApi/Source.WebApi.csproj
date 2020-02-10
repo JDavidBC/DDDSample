@@ -23,8 +23,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Core\Source.Core\Source.Core.csproj" />
-    <ProjectReference Include="..\..\DomainCore\Source.DataServices.Interfaces\Source.DataServices.Interfaces.csproj" />
-    <ProjectReference Include="..\..\DomainCore\Source.DomainServices\Source.DomainServices.csproj" />
+    <ProjectReference Include="..\..\Domain.DomainServices\Domain.DomainServices.csproj" />
     <ProjectReference Include="..\..\DomainCore\Source.Domains\Source.Domains.csproj" />
     <ProjectReference Include="..\..\Infrastructure.EFCore\Source.EFCore.Setup\Source.EFCore.Setup.csproj" />
   </ItemGroup>

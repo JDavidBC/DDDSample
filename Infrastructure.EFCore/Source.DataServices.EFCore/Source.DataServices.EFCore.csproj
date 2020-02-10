@@ -7,7 +7,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Core\Source.Core\Source.Core.csproj" />
-    <ProjectReference Include="..\..\DomainCore\Source.DataServices.Interfaces\Source.DataServices.Interfaces.csproj" />
+    <ProjectReference Include="..\..\Domain.DataServices.Interfaces\Domain.DataServices.Interfaces.csproj" />
+    <ProjectReference Include="..\..\Domain.DomainServices\Domain.DomainServices.csproj" />
     <ProjectReference Include="..\..\DomainCore\Source.Domains\Source.Domains.csproj" />
   </ItemGroup>
 

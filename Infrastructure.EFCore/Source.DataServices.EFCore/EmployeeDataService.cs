@@ -1,26 +1,28 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Domain.DataServices.Interfaces;
 using Source.Core.DataService.EFCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace Source.DataServices.EFCore
 {
     using DataContext;
-    using Interfaces;
     using Domains.Entities;
 
-    public class EmployeeDataService : EntityDataService<Employee>, IEmployeeDataService
+    public class CaregiversDataService : EntityDataService<Caregivers>, ICaregiversDataService
     {
-        public EmployeeDataService(AppDbContext dbContext) : base(dbContext)
+        public CaregiversDataService(AppDbContext dbContext) : base(dbContext)
         {
 
         }
 
-        public virtual async Task<IList<Employee>> GetByFirstName(string firstName)
+        
+        public virtual async Task<IList<Caregivers>> GetByFirstName(string firstName)
         {
-            return await DbContext.Set<Employee>().Where(x => x.FirstName.Contains(firstName)).ToListAsync();
+            return await DbContext.Set<Caregivers>().Where(x => x.Name.Contains(firstName)).ToListAsync();
         }
-
+        
+        
     }
 }

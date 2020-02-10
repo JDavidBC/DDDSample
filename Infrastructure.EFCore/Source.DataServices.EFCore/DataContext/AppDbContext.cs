@@ -10,11 +10,11 @@ namespace Source.DataServices.EFCore.DataContext
         {
         }
 
-        public virtual DbSet<Employee> Employees { get; set; }
+        public virtual DbSet<Caregivers> Caregivers { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Employee>().OwnsOne(c => c.Address);
+            //modelBuilder.Entity<Caregivers>().OwnsOne(c => c.);
         }
     }
 }

@@ -13,7 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Core\Source.Test.Core\Source.Test.Core.csproj" />
-    <ProjectReference Include="..\..\DomainCore\Source.DomainServices\Source.DomainServices.csproj" />
+    <ProjectReference Include="..\..\Domain.DomainServices\Domain.DomainServices.csproj" />
     <ProjectReference Include="..\Source.EFCore.Setup\Source.EFCore.Setup.csproj" />
   </ItemGroup>
 
