@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain.DataServices.Interfa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain.DomainServices", "Domain.DomainServices\Domain.DomainServices.csproj", "{F7175D04-B984-4BB5-9CBC-77CB1D52BEC2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain.PaginationServices", "Domain.PaginationServices\Domain.PaginationServices.csproj", "{FA95F9D0-249C-4CCE-9A4E-B710F94F5F10}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,6 +73,10 @@ Global
 		{F7175D04-B984-4BB5-9CBC-77CB1D52BEC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F7175D04-B984-4BB5-9CBC-77CB1D52BEC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F7175D04-B984-4BB5-9CBC-77CB1D52BEC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA95F9D0-249C-4CCE-9A4E-B710F94F5F10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA95F9D0-249C-4CCE-9A4E-B710F94F5F10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA95F9D0-249C-4CCE-9A4E-B710F94F5F10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA95F9D0-249C-4CCE-9A4E-B710F94F5F10}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -84,6 +90,7 @@ Global
 		{927DF350-D0DA-410B-86F1-10A6EE30D15C} = {AB873FBC-C5FF-4186-9C40-1B07B5869061}
 		{A138467E-02F0-435A-B60B-755C7F90887C} = {4F686221-B0CD-489C-8366-0732F9CC724B}
 		{F7175D04-B984-4BB5-9CBC-77CB1D52BEC2} = {4F686221-B0CD-489C-8366-0732F9CC724B}
+		{FA95F9D0-249C-4CCE-9A4E-B710F94F5F10} = {4F686221-B0CD-489C-8366-0732F9CC724B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {32A159D0-95EE-45EA-AB3A-ABC2DAF5FF5D}
