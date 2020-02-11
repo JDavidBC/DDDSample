@@ -11,7 +11,7 @@ namespace Source.EFCore.Setup
     {
         public static void Initialize(AppDbContext context)
         {
-            context.Database.EnsureDeleted();
+           // context.Database.EnsureDeleted();
 
             context.Database.EnsureCreated();
 
