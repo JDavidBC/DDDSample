@@ -1,4 +1,4 @@
-﻿namespace Domain.PaginationServices
+namespace Source.Pagination
 {
     public class Pager
     {
@@ -21,5 +21,6 @@
         /// Size of the current page
         /// </summary>
         public int PageSize { get; set; }
+
     }
 }

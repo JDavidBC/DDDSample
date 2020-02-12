@@ -1,5 +1,8 @@
-﻿namespace Domain.PaginationServices.Interfaces
+namespace Source.Pagination.Interfaces
 {
+    /// <summary>
+    /// Page configuration
+    /// </summary>
     public interface IPageConfig
     {
         /// <summary>
@@ -7,4 +10,5 @@
         /// </summary>
         int PageSize { get; }
     }
+
 }

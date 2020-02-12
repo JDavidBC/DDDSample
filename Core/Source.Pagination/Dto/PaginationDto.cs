@@ -1,10 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations;
 
-namespace Domain.PaginationServices.Dto
+namespace Source.Pagination.Dto
 {
     public class PaginationDto
     {
-        
         public PaginationDto()
         {
         }
@@ -26,5 +25,7 @@ namespace Domain.PaginationServices.Dto
         /// </summary>
         [Range(1, 200)]
         public int? PageSize { get; set; } = 10;
+        
+
     }
 }

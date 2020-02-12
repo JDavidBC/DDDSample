@@ -1,4 +1,4 @@
-﻿namespace Domain.PaginationServices
+namespace Source.Pagination
 {
     public class Meta
     {
@@ -16,5 +16,6 @@
         /// Pagination links of the current resource
         /// </summary>
         public Pagination Links { get; set; }
+
     }
 }

@@ -1,14 +1,11 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Domain.PaginationServices.Dto;
-using Domain.PaginationServices.Implementations;
+using Source.Pagination.Dto;
+using Source.Pagination.Implementations;
 
-namespace Domain.PaginationServices.Interfaces
+namespace Source.Pagination.Interfaces
 {
-    /// <summary>
-    /// A helper for data pagination
-    /// </summary>
     public interface IPageHelper
     {
         /// <summary>
@@ -41,5 +38,6 @@ namespace Domain.PaginationServices.Interfaces
         /// <param name="pager">The pagination page stats data</param>
         /// <returns>Pagination data</returns>
         Pagination GetPagination(Pager pager);
+
     }
 }

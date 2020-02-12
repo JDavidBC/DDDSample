@@ -1,8 +1,9 @@
-﻿using System.Collections.Generic;
-using Domain.PaginationServices.Interfaces;
+using System.Collections.Generic;
+using Source.Pagination.Interfaces;
 
-namespace Domain.PaginationServices.Implementations
+namespace Source.Pagination.Implementations
 {
+    
     public partial class PageHelper
     {
         public class ResultSet<TType> : IResultSet<TType>
@@ -11,4 +12,5 @@ namespace Domain.PaginationServices.Implementations
             public Pager Pager { get; set; }
         }
     }
+
 }

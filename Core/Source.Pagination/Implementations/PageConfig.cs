@@ -1,8 +1,11 @@
-﻿using System;
-using Domain.PaginationServices.Interfaces;
+using System;
+using Source.Pagination.Interfaces;
 
-namespace Domain.PaginationServices.Implementations
+namespace Source.Pagination.Implementations
 {
+    /// <summary>
+    /// Sets defaults for pagination
+    /// </summary>
     public class PageConfig : IPageConfig
     {
         public PageConfig()
@@ -18,6 +21,7 @@ namespace Domain.PaginationServices.Implementations
             PageSize = pageSize;
         }
 
-        public int PageSize { get; } = 10;
+        public int PageSize { get; } = 25;
     }
+
 }

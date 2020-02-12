@@ -1,4 +1,4 @@
-﻿namespace Domain.PaginationServices
+namespace Source.Pagination
 {
     public class Pagination
     {
@@ -41,5 +41,6 @@
         /// Last page's link
         /// </summary>
         public string LastPage { get; set; }
+
     }
 }

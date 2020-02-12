@@ -1,4 +1,4 @@
-﻿namespace Domain.PaginationServices.Interfaces
+namespace Source.Pagination.Interfaces
 {
     public interface IEnvelope
     {
@@ -6,5 +6,6 @@
         /// Extra information about the response
         /// </summary>
         Meta Meta { get; set; }
+
     }
 }

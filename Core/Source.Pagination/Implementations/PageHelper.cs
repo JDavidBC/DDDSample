@@ -1,21 +1,24 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
-using Domain.PaginationServices.Dto;
-using Domain.PaginationServices.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
+using Source.Pagination.Dto;
+using Source.Pagination.Interfaces;
 
-namespace Domain.PaginationServices.Implementations
+namespace Source.Pagination.Implementations
 {
+   /// <summary>
+    /// Used to create pagination
+    /// </summary>
     public partial class PageHelper : IPageHelper
     {
-         #region Private Fields
+        #region Private Fields
         private readonly Func<int, int, int> _countFrom =
             (pageSize, pageNumber) => pageNumber == 1 ? 0 : pageSize * pageNumber - pageSize;
         #endregion
@@ -34,6 +37,10 @@ namespace Domain.PaginationServices.Implementations
             _pageConfig = options.Value;
             _urlHelper = urlHelper;
             _mapper = mapper;
+        }
+        public PageHelper()
+        {
+            
         }
         #endregion
 
@@ -60,11 +67,14 @@ namespace Domain.PaginationServices.Implementations
         /// <inheritdoc />
         public async Task<Envelope<IEnumerable<T>>> GetPage<T>(IEnumerable<T> items, PaginationDto paginationDto) where T : class
         {
+            Console.WriteLine("Getpage");
+
             if (paginationDto == null)
             {
                 throw new ArgumentNullException(nameof(paginationDto));
             }
             paginationDto.PageSize = paginationDto.PageSize ?? _pageConfig.PageSize;
+            Console.WriteLine("paginationDto");
 
             var countFrom = _countFrom(paginationDto.PageSize.Value, paginationDto.Page);
             var records = items
@@ -212,8 +222,7 @@ namespace Domain.PaginationServices.Implementations
         public static Task<List<T>> ToListAsync<T>(this IQueryable<T> list) {
             return Task.Run(() => list.ToList());
         }
-        
+ 
     }
-    
-    
+
 }

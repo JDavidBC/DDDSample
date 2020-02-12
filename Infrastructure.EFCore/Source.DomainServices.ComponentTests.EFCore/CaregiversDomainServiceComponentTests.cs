@@ -2,6 +2,8 @@ using Domain.DomainServices;
 using Source.DataServices.EFCore;
 using Source.Domains.Entities;
 using Source.EFCore.Setup;
+using Source.Pagination.Implementations;
+using Source.Pagination.Interfaces;
 using Source.Test.Core.TestBases;
 
 namespace Source.DomainServices.ComponentTests.EFCore
@@ -16,7 +18,7 @@ namespace Source.DomainServices.ComponentTests.EFCore
 
         static CaregiversDataService Factory_DataService()
         {
-            var caregiversDataService = new CaregiversDataService(TestDbContextFactory.CreateDbContext());
+            var caregiversDataService = new CaregiversDataService(TestDbContextFactory.CreateDbContext(), new PageHelper());
 
             return caregiversDataService;
         }

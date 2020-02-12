@@ -1,7 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System.Linq;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Source.Core.DomainService;
 using Microsoft.AspNetCore.Mvc;
+using Source.Pagination.Dto;
+using Source.Core.Utils;
 
 namespace Source.Core.WebApi
 {
@@ -19,6 +22,22 @@ namespace Source.Core.WebApi
         public virtual async Task<IEnumerable<TDomain>> Get()
         {
             return await DomainService.GetAll();
+        }
+        
+        [HttpGet("getpaginate/")]
+        public virtual async Task<IEnumerable<TDomain>> GetPaginate([FromQuery] PaginationDto paginationDto)
+        {
+            var pagination =  await DomainService.GetPaginate(paginationDto);                    
+                    
+
+            Response.AddPagination(pagination.Meta.Links.Pager.CurrentPage, 
+                pagination.Meta.Links.Pager.PageSize, 
+                pagination.Meta.Links.Pager.TotalRecords, 
+                pagination.Meta.Links.Pager.NumberOfPages);
+
+
+            return pagination.Data;
+
         }
 
         [HttpGet("{id}")]

@@ -1,12 +1,12 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
-namespace Domain.PaginationServices.Interfaces
+namespace Source.Pagination.Interfaces
 {
     /// <summary>
     /// Pagination result
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public interface IResultSet<T> 
+    public interface IResultSet<T>
     {
         /// <summary>
         /// Items in the page
@@ -18,4 +18,5 @@ namespace Domain.PaginationServices.Interfaces
         /// </summary>
         Pager Pager { get; set; }
     }
+
 }

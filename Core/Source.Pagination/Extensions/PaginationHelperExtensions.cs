@@ -1,15 +1,15 @@
-﻿using Domain.PaginationServices.Implementations;
-using Domain.PaginationServices.Interfaces;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.AspNetCore.Mvc.Routing;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
+using Source.Pagination.Implementations;
+using Source.Pagination.Interfaces;
 
-namespace Domain.PaginationServices.Extensions
+namespace Source.Pagination.Extensions
 {
     public static class PaginationHelperExtensions
     {
-        // <summary>
+        /// <summary>
         /// Adds services for PageHelper
         /// </summary>
         /// <param name="services">Service Collection</param>
@@ -30,5 +30,6 @@ namespace Domain.PaginationServices.Extensions
 
             return services;
         }
+
     }
 }

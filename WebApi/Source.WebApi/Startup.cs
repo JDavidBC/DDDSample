@@ -4,6 +4,7 @@ using System.IO;
 using System.Net.Http;
 using System.Reflection;
 using System.Security.Authentication;
+using AutoMapper;
 using Domain.DataServices.Interfaces;
 using Domain.DomainServices;
 using Hellang.Middleware.ProblemDetails;
@@ -16,7 +17,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Newtonsoft.Json;
 using Source.DataServices.EFCore;
+using Source.Pagination.Extensions;
 using Source.WebApi.Application.Filters;
+using Source.WebApi.Mapper;
 using Swashbuckle.AspNetCore.Swagger;
 
 namespace Source.WebApi
@@ -68,7 +71,17 @@ namespace Source.WebApi
 
             });
                 
+            
+            /*Automaper*/
+            var mappingConfig = new MapperConfiguration(mc =>
+            {
+                mc.AddProfile(new MappingProfile());
+            });
 
+            IMapper mapper = mappingConfig.CreateMapper();
+            services.AddSingleton(mapper);
+            services.AddPaginationHelper();
+            
             // Register the Swagger generator, defining 1 or more Swagger documents
 
             services.AddSwaggerGen(c =>
@@ -84,6 +97,10 @@ namespace Source.WebApi
                 var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
                 c.IncludeXmlComments(xmlPath);
             });
+            
+            
+
+           
             
             services.AddProblemDetails(setup =>
             {

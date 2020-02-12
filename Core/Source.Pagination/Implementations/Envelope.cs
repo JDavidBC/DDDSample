@@ -1,6 +1,6 @@
-﻿using Domain.PaginationServices.Interfaces;
+using Source.Pagination.Interfaces;
 
-namespace Domain.PaginationServices.Implementations
+namespace Source.Pagination.Implementations
 {
     /// <summary>
     /// A wrapper around the requested data and it's related metadata
@@ -23,4 +23,5 @@ namespace Domain.PaginationServices.Implementations
         /// </summary>
         public Meta Meta { get; set; }
     }
+
 }
