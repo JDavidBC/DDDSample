@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Source.Core.Exceptions;
+using Source.Pagination.Dto;
 
 namespace Source.Core.DomainService
 {
     using DataService;
+    using Source.Pagination.Implementations;
     using Utils;
 
     public class DomainService<TDomain, TId>
@@ -22,7 +24,15 @@ namespace Source.Core.DomainService
         {
             return await _entityDataService.GetAll();
         }
-
+        
+        public virtual async Task<Envelope<IEnumerable<TDomain>>> GetPaginate(PaginationDto paginationDto)
+        {
+           
+            var pagination = await _entityDataService.GetPaginate(paginationDto);
+        
+            return pagination;
+        }
+        
         public virtual async Task<TDomain> GetById(TId id)
         {
             if (id.IsNullOrEmpty())
